@@ -1,0 +1,151 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="100%" height="100%">
+    <defs>
+        <!-- Background Radial Gradient -->
+        <radialGradient id="bgGradient" cx="35%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#52A5EF" />
+            <stop offset="40%" stop-color="#2480DC" />
+            <stop offset="85%" stop-color="#0E5BB5" />
+            <stop offset="100%" stop-color="#083E82" />
+        </radialGradient>
+
+        <!-- Golden Needle Gradients -->
+        <linearGradient id="needleBase" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#B58900" />
+            <stop offset="20%" stop-color="#FFD700" />
+            <stop offset="45%" stop-color="#FFFACD" />
+            <stop offset="55%" stop-color="#FFFACD" />
+            <stop offset="80%" stop-color="#FFD700" />
+            <stop offset="100%" stop-color="#B58900" />
+        </linearGradient>
+
+        <linearGradient id="needleInnerShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="rgba(0,0,0,0.2)" />
+            <stop offset="15%" stop-color="rgba(0,0,0,0)" />
+            <stop offset="85%" stop-color="rgba(0,0,0,0)" />
+            <stop offset="100%" stop-color="rgba(0,0,0,0.3)" />
+        </linearGradient>
+
+        <!-- Thread Drop Shadows -->
+        <filter id="threadShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#051B3B" flood-opacity="0.5" />
+        </filter>
+
+        <filter id="needleShadow" x="-30%" y="-20%" width="160%" height="140%">
+            <feDropShadow dx="8" dy="10" stdDeviation="6" flood-color="#031229" flood-opacity="0.45" />
+        </filter>
+
+        <!-- Thread Rope Pattern -->
+        <pattern id="ropePattern" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+            <line x1="0" y1="0" x2="0" y2="20" stroke="#E0E5EC" stroke-width="8" />
+            <line x1="10" y1="0" x2="10" y2="20" stroke="#FFFFFF" stroke-width="8" />
+        </pattern>
+
+        <!-- Thread Base Gradient for 3D Volume -->
+        <linearGradient id="threadGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF" />
+            <stop offset="70%" stop-color="#E2E7ED" />
+            <stop offset="100%" stop-color="#B5C0CE" />
+        </linearGradient>
+    </defs>
+
+    <!-- ================= BACKGROUND ================= -->
+    <!-- Clean, non-dark edge circle -->
+    <circle cx="500" cy="500" r="480" fill="url(#bgGradient)" />
+
+    <!-- Fine Radial Texture Lines -->
+    <g stroke="rgba(255,255,255,0.04)" stroke-width="1.5" fill="none">
+        <circle cx="500" cy="500" r="460" />
+        <circle cx="500" cy="500" r="440" />
+        <circle cx="500" cy="500" r="420" />
+        <circle cx="500" cy="500" r="400" />
+        <circle cx="500" cy="500" r="380" />
+        <circle cx="500" cy="500" r="360" />
+        <circle cx="500" cy="500" r="340" />
+        <circle cx="500" cy="500" r="320" />
+        <circle cx="500" cy="500" r="300" />
+        <circle cx="500" cy="500" r="280" />
+        <circle cx="500" cy="500" r="260" />
+        <circle cx="500" cy="500" r="240" />
+        <circle cx="500" cy="500" r="220" />
+        <circle cx="500" cy="500" r="200" />
+        <circle cx="500" cy="500" r="180" />
+        <circle cx="500" cy="500" r="160" />
+        <circle cx="500" cy="500" r="140" />
+        <circle cx="500" cy="500" r="120" />
+        <circle cx="500" cy="500" r="100" />
+        <circle cx="500" cy="500" r="80" />
+    </g>
+
+    <!-- ================= BACK THREAD SEGMENTS ================= -->
+    <g filter="url(#threadShadow)" fill="none" stroke="url(#threadGrad)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Top loop going behind needle head -->
+        <path d="M 508 215 C 500 130, 545 45, 582 95 C 618 145, 595 210, 505 260" />
+
+        <!-- Middle loop behind needle body -->
+        <path d="M 370 510 C 370 610, 480 675, 580 640 C 680 600, 710 480, 620 400 C 560 350, 510 400, 510 460" />
+    </g>
+
+    <!-- Back Thread Texture Overlay -->
+    <g fill="none" stroke="url(#ropePattern)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" opacity="0.25">
+        <path d="M 508 215 C 500 130, 545 45, 582 95 C 618 145, 595 210, 505 260" />
+        <path d="M 370 510 C 370 610, 480 675, 580 640 C 680 600, 710 480, 620 400 C 560 350, 510 400, 510 460" />
+    </g>
+
+    <!-- ================= GOLDEN NEEDLE ================= -->
+    <g filter="url(#needleShadow)">
+        <!-- Outer Needle Shape -->
+        <path d="M 515 120 C 538 120, 552 145, 550 180 L 538 480 C 533 550, 523 750, 516 900 C 515 912, 513 912, 512 900 C 505 750, 495 550, 490 480 L 478 180 C 476 145, 490 120, 515 120 Z" fill="url(#needleBase)" />
+
+        <!-- Overlay shading for depth -->
+        <path d="M 515 120 C 538 120, 552 145, 550 180 L 538 480 C 533 550, 523 750, 516 900 C 515 912, 513 912, 512 900 C 505 750, 495 550, 490 480 L 478 180 C 476 145, 490 120, 515 120 Z" fill="url(#needleInnerShadow)" />
+
+        <!-- Needle Eye Hole Cutout -->
+        <path d="M 514 150 C 525 150, 528 170, 524 210 C 520 250, 514 280, 514 280 C 514 280, 508 250, 504 210 C 500 170, 503 150, 514 150 Z" fill="#1A62B3" />
+
+        <!-- Eye Hole Inner Shadow -->
+        <path d="M 514 150 C 525 150, 528 170, 524 210 C 520 250, 514 280, 514 280 C 514 280, 508 250, 504 210 C 500 170, 503 150, 514 150 Z" fill="none" stroke="#705A00" stroke-width="3" stroke-opacity="0.5" />
+    </g>
+
+    <!-- ================= THREAD GOING THROUGH THE HOLE ================= -->
+    <!-- Base volume -->
+    <g fill="none" stroke="url(#threadGrad)" stroke-width="22" stroke-linecap="round">
+        <path d="M 533 80 C 515 120, 512 180, 514 215" />
+    </g>
+    <!-- Texture -->
+    <g fill="none" stroke="url(#ropePattern)" stroke-width="20" stroke-linecap="round" opacity="0.25">
+        <path d="M 533 80 C 515 120, 512 180, 514 215" />
+    </g>
+
+    <!-- ================= FRONT THREAD SEGMENTS ================= -->
+    <g filter="url(#threadShadow)" fill="none" stroke="url(#threadGrad)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Thread coming out of Eye, going down-left -->
+        <path d="M 514 215 C 500 240, 420 310, 350 420 C 310 480, 310 560, 370 610" />
+
+        <!-- Treble Clef Inner Spiral -->
+        <path d="M 510 460 C 510 520, 450 560, 415 520 C 390 480, 430 420, 480 435" />
+
+        <!-- Bottom Swirl / Tail -->
+        <path d="M 512 700 C 512 750, 580 750, 585 830 C 590 910, 490 970, 400 950 C 330 930, 330 840, 390 800 C 440 770, 480 830, 440 880 C 420 900, 395 880, 410 860" />
+    </g>
+
+    <!-- Front Thread Texture Overlay -->
+    <g fill="none" stroke="url(#ropePattern)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" opacity="0.25">
+        <path d="M 514 215 C 500 240, 420 310, 350 420 C 310 480, 310 560, 370 610" />
+        <path d="M 510 460 C 510 520, 450 560, 415 520 C 390 480, 430 420, 480 435" />
+        <path d="M 512 700 C 512 750, 580 750, 585 830 C 590 910, 490 970, 400 950 C 330 930, 330 840, 390 800 C 440 770, 480 830, 440 880 C 420 900, 395 880, 410 860" />
+    </g>
+
+    <!-- ================= THREAD KNOT ON NEEDLE ================= -->
+    <g filter="url(#threadShadow)">
+        <!-- Main Knot Body -->
+        <ellipse cx="512" cy="735" rx="28" ry="18" fill="url(#threadGrad)" transform="rotate(-10 512 735)" />
+        <ellipse cx="512" cy="735" rx="26" ry="16" fill="url(#ropePattern)" opacity="0.25" transform="rotate(-10 512 735)" />
+
+        <!-- Knot Loops and Wrapping Details -->
+        <path d="M 488 730 C 495 715, 525 715, 535 730 C 542 742, 520 755, 495 745" fill="none" stroke="url(#threadGrad)" stroke-width="12" stroke-linecap="round" />
+
+        <!-- Small Loose Tail near Knot -->
+        <path d="M 530 740 C 545 750, 550 780, 538 820" fill="none" stroke="url(#threadGrad)" stroke-width="14" stroke-linecap="round" />
+        <path d="M 530 740 C 545 750, 550 780, 538 820" fill="none" stroke="url(#ropePattern)" stroke-width="12" stroke-linecap="round" opacity="0.25" />
+    </g>
+</svg>
